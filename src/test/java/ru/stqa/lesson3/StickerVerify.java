@@ -36,7 +36,7 @@ public class StickerVerify {
         for (int i = 0; i < products.size(); i++) {
             tmp = (WebElement)products.get(i);
             try {
-                tmp.findElement(By.cssSelector("div[class^=sticker]"));
+                assert (tmp.findElements(By.cssSelector("div[class^=sticker]")).size() == 2);
             } catch(NoSuchElementException e) {
                 System.out.println("Product #" + (i + 1)  + " have no sticker");
             }
