@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,7 @@ public class MenuClicker {
     }
 
     @Test
-    public void TestGo() {
+    public void testGo() {
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
@@ -45,10 +46,10 @@ public class MenuClicker {
                         (By.cssSelector("ul#box-apps-menu li:not(#app-):nth-child(" + j +")"))
                         .click();
                 try {
-                    driver.findElement(By.tagName("h1"));
+                    driver.findElement(By.cssSelector("td#content h1"));
                 } catch (NoSuchElementException e) {
                     System.out.println("Can't find header. Menu # " + i + "." + j);
-                } finally {continue;}
+                }
             }
         }
     }

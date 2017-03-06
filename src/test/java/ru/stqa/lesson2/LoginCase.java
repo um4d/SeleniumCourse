@@ -19,7 +19,7 @@ public class LoginCase {
     }
 
     @Test
-    public void TestGo() {
+    public void testGo() {
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
